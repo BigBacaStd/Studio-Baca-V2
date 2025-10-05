@@ -3,7 +3,7 @@ import {ArticleLayout} from '@/components/ArticleLayout'
 export const article = {
     author: 'Polo Vargas',
     date: '2025-09-15',
-    title: 'SQL vs NoSQL: What I Learned Trying to Model Real-World Data',
+    title: 'SQL and NoSQL through hands-on experiments',
     description:
         'Relational or document-based? In this article, I explore the key differences between SQL and NoSQL through hands-on experiments, and how each plays a role in building efficient, scalable data systems.',
 }
@@ -15,87 +15,36 @@ export const metadata = {
 
 export default (props) => <ArticleLayout article={article} {...props} />
 
-When we released the first version of cosmOS last year, it was written in Go. Go is a wonderful programming language with a lot of benefits, but it’s been a while since I’ve seen an article on the front page of Hacker News about rewriting some important tool in Go and I see articles on there about rewriting things in Rust every single week.
+When I first started modeling real-world data, I thought choosing between SQL and NoSQL was just a matter of preference — kind of like tabs vs. spaces. But the deeper I got into data modeling, the more I realized it’s not a debate about technology. It’s about understanding how real life behaves — unpredictable, messy, and full of exceptions that don’t fit cleanly into any schema.
 
-```rust
-use ferris_says::say;
-use std::io::{stdout, BufWriter};
+At first, I lived in the SQL world. Tables, foreign keys, and constraints made sense to me. SQL gave me structure, and structure gave me confidence. You can write a query once and trust it will behave tomorrow exactly as it did today. When I was working on projects involving trades, orders, and financial instruments, relational databases were the perfect match. The data was structured, relationships were predictable, and ACID transactions gave me peace of mind.
 
-fn main() {
-    let stdout = stdout();
-    let message = String::from("Hello fellow hackers");
-    let width = message.chars().count();
+I loved how SQL forces discipline. It makes you think carefully about relationships before you write a single line of data. You define your schema, and your schema defines how the system thinks. It’s logical, traceable, and, for better or worse, unforgiving.
 
-    let mut writer = BufWriter::new(stdout.lock());
-    say(message.as_bytes(), width, &mut writer).unwrap();
-}
-```
+Then came my first NoSQL project, and everything changed.
 
-I derive a large amount of my self-worth from whether or not Hacker News is impressed with the work I'm doing, so when I realized this, I cancelled all of our existing projects and started migrating everything to Rust immediately.
+I was trying to store event logs — real user actions that changed shape over time. Some events had five properties, others had fifteen, and occasionally, a new one appeared that broke everything I thought I knew about the dataset. Trying to force that data into a fixed SQL schema felt like hammering a square peg into a round hole.
 
-## Sermone fata
+So I turned to NoSQL, and suddenly the world felt flexible. Collections, documents, nested objects — it was liberating. I could store data as it came, adapt my model on the fly, and stop worrying about migrations every time the product team added a new feature.
 
-Lorem markdownum, bracchia in redibam! Terque unda puppi nec, linguae posterior
-in utraque respicere candidus Mimasque formae; quae conantem cervice. Parcite
-variatus, redolentia adeunt. Tyrioque dies, naufraga sua adit partibus celanda
-torquere temptata, erit maneat et ramos, [iam](#) ait dominari
-potitus! Tibi litora matremque fumantia condi radicibus opusque.
+But that flexibility had a cost. Without a schema, consistency became my responsibility. I had to make sure the data followed the right patterns manually, because the database wasn’t enforcing them for me. I learned that schema-less doesn’t mean structureless — it means you are the schema.
 
-Deus feram verumque, fecit, ira tamen, terras per alienae victum. Mutantur
-levitate quas ubi arcum ripas oculos abest. Adest [commissaque
-victae](#) in gemitus nectareis ire diva
-dotibus ora, et findi huic invenit; fatis? Fractaque dare superinposita
-nimiumque simulatoremque sanguine, at voce aestibus diu! Quid veterum hausit tu
-nil utinam paternos ima, commentaque.
+After working with both, here’s what I learned:
 
-```c
-exbibyte_wins = gigahertz(3);
-grayscaleUtilityClient = control_uat;
-pcmciaHibernate = oop_virus_console(text_mountain);
-if (stateWaisFirewire >= -2) {
-    jfs = 647065 / ldapVrml(tutorialRestore, 85);
-    metal_runtime_parse = roomComputingResolution - toolbarUpload +
-            ipx_nvram_open;
-} else {
-    maximizeSidebar *= suffix_url(flatbed + 2, requirements_encoding_node +
-            only_qbe_media, minicomputer);
-}
-```
+SQL: The Architect
 
-Aere repetiti cognataque natus. Habebat vela solutis saepe munus nondum adhuc
-oscula nomina pignora corpus deserat.
+SQL is great when your data is well-behaved and your rules are clear. It gives you tools for validation, transactions, and data integrity — perfect for systems where every record matters. If you’re dealing with structured relationships, historical tracking, or data that doesn’t change format frequently, SQL is still king. It’s reliable, predictable, and battle-tested.
 
-## Lethaei Pindumve me quae dinumerat Pavor
+NoSQL: The Explorer
 
-Idem se saxa fata pollentibus geminos; quos pedibus. Est urnis Herses omnes nec
-divite: et ille illa furit sim verbis Cyllenius.
+NoSQL shines in chaos. It’s built for when your data changes faster than your schema can keep up — user-generated content, logs, IoT events, or anything unstructured. It lets you move fast, test ideas, and scale without constantly redefining tables. But it also demands discipline: good naming conventions, versioning strategies, and strong data validation at the application level.
 
-1. Captus inpleverunt collo
-2. Nec nam placebant
-3. Siquos vulgus
-4. Dictis carissime fugae
-5. A tacitos nulla viginti
+Where I Landed
 
-Ungues fistula annoso, ille addit linoque motatque uberior verso
-[rubuerunt](#) confine desuetaque. _Sanguine_ anteit
-emerguntque expugnacior est pennas iniqui ecce **haeret** genus: peiora imagine
-fossas Cephisos formosa! Refugitque amata [refelli](#)
-supplex. Summa brevis vetuere tenebas, hostes vetantis, suppressit, arreptum
-regna. Postquam conpescit iuvenis habet corpus, et erratica, perdere, tot mota
-ars talis.
+After working with both for a while, I stopped seeing SQL vs NoSQL as a war and started seeing them as complementary tools. I’ve used SQL for structure — the parts of my systems that need to be consistent and auditable — and NoSQL for flexibility, especially when modeling behavior or capturing unpredictable events.
 
-```c
-digital.webcam_dual_frequency = webmasterMms;
-if (5 + language_standalone_google) {
-    cc_inbox_layout *= file_character;
-    task += p;
-    lockUnicode += enterprise_monochrome(tokenFunctionPersonal, keyVirtual,
-            adf);
-}
-windows_binary_esports(87734, array(restoreRomTopology, adRaw(407314),
-        dongleBashThumbnail), interpreter);
-```
+The real lesson? Databases are just mirrors of the world you’re modeling. And the real world isn’t perfectly relational or purely document-based — it’s a mix of both.
 
-Sit volat naturam; motu Cancri. Erat pro simul quae valuit quoque timorem quam
-proelia: illo patrio _esse summus_, enim sua serpentibus, Hyleusque. Est coniuge
-recuso; refert Coroniden ignotos manat, adfectu.
+SQL is the architect that builds stable structures.
+NoSQL is the explorer that maps uncharted territory.
+Real-world data needs both.

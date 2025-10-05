@@ -63,24 +63,25 @@ export default function About() {
                     </h1>
                     <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
                         <p>
-                            I’ve always been obsessed with two things: dinosaurs and data. As a kid, I memorized the
-                            names of every dino in the Jurassic Park franchise — and then made a spreadsheet ranking
-                            them by size, teeth count, and “likely to eat me first.”
+                            II’ve always been fascinated by patterns — from the rise and fall of dinosaurs to the rise
+                            and fall of markets. What started as a curiosity about how massive systems evolve over time
+                            turned into a passion for understanding data — how it moves, mutates, and sometimes goes
+                            extinct.
                         </p>
                         <p>
-                            While most kids built pillow forts, I built databases. My first “big” project was a fossil
-                            tracking system for a backyard dig site (which turned out to be mostly rocks and chicken
-                            bones). But that didn’t stop me — I started learning Python just to make it more official.
+                            Today, I channel that curiosity into analyzing market behavior and building data models that
+                            reveal hidden trends. I approach financial datasets the same way a paleontologist approaches
+                            fossils — with patience, precision, and an eye for the story buried beneath the surface.
                         </p>
                         <p>
-                            Over time, my passion shifted from digging up ancient bones to digging through messy
-                            datasets. I found the same thrill in cleaning, organizing, and optimizing information
-                            pipelines — like piecing together a prehistoric puzzle, one row at a time.
+                            Whether it’s visualizing volatility, tracking performance, or optimizing trading strategies,
+                            I find energy in uncovering the structure behind the chaos. In my view, markets and
+                            ecosystems aren’t that different — both reward adaptability and punish stagnation.
                         </p>
                         <p>
-                            Today, I’m working toward a career in data engineering, where I can build the systems that
-                            power insights for others. And yes, I still think dinosaurs are cool — but clean, scalable
-                            data architecture? Now that’s my kind of monster.
+                            Dinosaurs may be gone, but my fascination with complex systems lives on — only now, my
+                            fossils are rows of market data, and my tools are Python, SQL, and a healthy respect for
+                            what evolution (and the economy) can teach us.
                         </p>
                     </div>
                 </div>
@@ -95,7 +96,8 @@ export default function About() {
                         <SocialLink href="https://github.com/BigBacaStd" icon={GitHubIcon} className="mt-4">
                             Follow on GitHub
                         </SocialLink>
-                        <SocialLink href="https://www.linkedin.com/in/jorge-vargas18"  icon={LinkedInIcon} className="mt-4">
+                        <SocialLink href="https://www.linkedin.com/in/jorge-vargas18" icon={LinkedInIcon}
+                                    className="mt-4">
                             Follow on LinkedIn
                         </SocialLink>
                         <SocialLink

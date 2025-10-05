@@ -2,11 +2,11 @@ import Image from 'next/image'
 
 import {Card} from '@/components/Card'
 import {SimpleLayout} from '@/components/SimpleLayout'
-import logoNetflix from '@/images/logos/Netflix.svg'
-import logoChurn from '@/images/logos/customerchurn.svg'
-import logoJobMarket from '@/images/logos/jobmarket.svg'
-import logoBirth from '@/images/logos/birthrate.svg'
-import logoCrypto from '@/images/logos/Dashboard.svg'
+import logoNetflix from '@/images/logos/Netflix.jpg'
+import logoChurn from '@/images/logos/customerchurn.jpg'
+import logoJobMarket from '@/images/logos/jobmarket.jpg'
+import logoBirth from '@/images/logos/birthrate.jpg'
+import logoCrypto from '@/images/logos/Dashboard.jpg'
 
 const projects = [{
     name: 'Crypto Dashboard',

@@ -1,112 +1,94 @@
-import { Card } from '@/components/Card'
-import { Section } from '@/components/Section'
-import { SimpleLayout } from '@/components/SimpleLayout'
+import {Card} from '@/components/Card'
+import {Section} from '@/components/Section'
+import {SimpleLayout} from '@/components/SimpleLayout'
 
-function ToolsSection({ children, ...props }) {
-  return (
-    <Section {...props}>
-      <ul role="list" className="space-y-16">
-        {children}
-      </ul>
-    </Section>
-  )
+function ToolsSection({children, ...props}) {
+    return (
+        <Section {...props}>
+            <ul role="list" className="space-y-16">
+                {children}
+            </ul>
+        </Section>
+    )
 }
 
-function Tool({ title, href, children }) {
-  return (
-    <Card as="li">
-      <Card.Title as="h3" href={href}>
-        {title}
-      </Card.Title>
-      <Card.Description>{children}</Card.Description>
-    </Card>
-  )
+function Tool({title, href, children}) {
+    return (
+        <Card as="li">
+            <Card.Title as="h3" href={href}>
+                {title}
+            </Card.Title>
+            <Card.Description>{children}</Card.Description>
+        </Card>
+    )
 }
 
 export const metadata = {
-  title: 'Reviews',
-  description: 'Software I use, gadgets I love, and other things I recommend.',
+    title: 'Reviews',
+    description: 'Software I use, gadgets I love, and other things I recommend.',
 }
 
 export default function Uses() {
-  return (
-    <SimpleLayout
-      title="Software I use, gadgets I love, and other things I recommend."
-      intro="I get asked a lot about the things I use to build software, stay productive, or buy to fool myself into thinking I’m being productive when I’m really just procrastinating. Here’s a big list of all of my favorite stuff."
-    >
-      <div className="space-y-20">
-        <ToolsSection title="Workstation">
-          <Tool title="16” MacBook Pro, M1 Max, 64GB RAM (2021)">
-            I was using an Intel-based 16” MacBook Pro prior to this and the
-            difference is night and day. I’ve never heard the fans turn on a
-            single time, even under the incredibly heavy loads I put it through
-            with our various launch simulations.
-          </Tool>
-          <Tool title="Apple Pro Display XDR (Standard Glass)">
-            The only display on the market if you want something HiDPI and
-            bigger than 27”. When you’re working at planetary scale, every pixel
-            you can get counts.
-          </Tool>
-          <Tool title="IBM Model M SSK Industrial Keyboard">
-            They don’t make keyboards the way they used to. I buy these any time
-            I see them go up for sale and keep them in storage in case I need
-            parts or need to retire my main.
-          </Tool>
-          <Tool title="Apple Magic Trackpad">
-            Something about all the gestures makes me feel like a wizard with
-            special powers. I really like feeling like a wizard with special
-            powers.
-          </Tool>
-          <Tool title="Herman Miller Aeron Chair">
-            If I’m going to slouch in the worst ergonomic position imaginable
-            all day, I might as well do it in an expensive chair.
-          </Tool>
-        </ToolsSection>
-        <ToolsSection title="Development tools">
-          <Tool title="Sublime Text 4">
-            I don’t care if it’s missing all of the fancy IDE features everyone
-            else relies on, Sublime Text is still the best text editor ever
-            made.
-          </Tool>
-          <Tool title="iTerm2">
-            I’m honestly not even sure what features I get with this that aren’t
-            just part of the macOS Terminal but it’s what I use.
-          </Tool>
-          <Tool title="TablePlus">
-            Great software for working with databases. Has saved me from
-            building about a thousand admin interfaces for my various projects
-            over the years.
-          </Tool>
-        </ToolsSection>
-        <ToolsSection title="Design">
-          <Tool title="Figma">
-            We started using Figma as just a design tool but now it’s become our
-            virtual whiteboard for the entire company. Never would have expected
-            the collaboration features to be the real hook.
-          </Tool>
-        </ToolsSection>
-        <ToolsSection title="Productivity">
-          <Tool title="Alfred">
-            It’s not the newest kid on the block but it’s still the fastest. The
-            Sublime Text of the application launcher world.
-          </Tool>
-          <Tool title="Reflect">
-            Using a daily notes system instead of trying to keep things
-            organized by topics has been super powerful for me. And with
-            Reflect, it’s still easy for me to keep all of that stuff
-            discoverable by topic even though all of my writing happens in the
-            daily note.
-          </Tool>
-          <Tool title="SavvyCal">
-            Great tool for scheduling meetings while protecting my calendar and
-            making sure I still have lots of time for deep work during the week.
-          </Tool>
-          <Tool title="Focus">
-            Simple tool for blocking distracting websites when I need to just do
-            the work and get some momentum going.
-          </Tool>
-        </ToolsSection>
-      </div>
-    </SimpleLayout>
-  )
+    return (
+        <SimpleLayout
+            title="Software I use, gadgets I love, and other things I recommend."
+            intro="I get asked a lot about the things I use to build software, stay productive, or buy to fool myself into thinking I’m being productive when I’m really just procrastinating. Here’s a big list of all of my favorite stuff."
+        >
+            <div className="space-y-20">
+                <ToolsSection title="Workstation">
+                    <Tool title="14” MacBook Pro (M1 Max, 16GB RAM, 2021)">
+                        This machine never breaks a sweat — even when I’m juggling datasets, backtests, and dashboards
+                        all at once. The M1 Max chip handles everything I throw at it, quietly judging my messy code
+                        while keeping its cool (literally — the fans never turn on).
+
+                    </Tool>
+                    <Tool title="Dual LG Monitors">
+                        Once you go dual-screen, there’s no going back. One screen for charts and live data feeds, the
+                        other for analysis, notes, and way too many browser tabs. Every extra inch of screen real estate
+                        is another excuse to multitask.
+                    </Tool>
+                    <Tool title="Apple Magic Keyboard">
+                        Clean, minimal, and surprisingly satisfying to type on. It’s like the polite version of a
+                        mechanical keyboard — it never yells, but it gets the job done.
+
+                    </Tool>
+                    <Tool title="Logitech MX Master Mouse">
+                        The MVP of my desk setup. Smooth, programmable, and ergonomically perfect. Scrolling through
+                        massive spreadsheets feels almost therapeutic (almost).
+                    </Tool>
+                    <Tool title="Razer Chair">
+                        If I’m going to sit for hours crunching data and watching market swings, I might as well do it
+                        like a boss. It’s comfortable enough to make 12-hour trading days survivable — just barely.
+                    </Tool>
+                </ToolsSection>
+                <ToolsSection title="Development tools">
+                    <Tool title="PyCharm">
+                        My go-to for Python work — clean, powerful, and packed with features I actually use. From data
+                        analysis scripts to trading automations, PyCharm keeps everything organized while quietly
+                        judging my indentation choices.
+                    </Tool>
+                    <Tool title="WebStorm">
+                        When I switch from data pipelines to front-end dashboards, WebStorm makes the transition
+                        painless. It’s fast, smart, and occasionally reminds me that I’m not as clever as I think I am.
+                    </Tool>
+                    <Tool title="Warp">
+                        It’s like the command line, but from the future. Fast, modern, and actually enjoyable to use —
+                        which is something I never thought I’d say about a terminal.
+                    </Tool>
+                </ToolsSection>
+                <ToolsSection title="Productivity">
+                    <Tool title="Notion">
+                        My second brain — or maybe my first, depending on how much coffee I’ve had. Everything lives
+                        here: notes, project plans, trading logs, and random ideas that might one day become something
+                        real. It’s where chaos meets structure (and occasionally wins).
+                    </Tool>
+                    <Tool title="ChatGPT">
+                        The ultimate brainstorming partner, research assistant, and debugging therapist. Whether I’m
+                        writing SQL queries, summarizing reports, or arguing with myself about code logic, ChatGPT keeps
+                        me sane — or at least productively distracted.
+                    </Tool>
+                </ToolsSection>
+            </div>
+        </SimpleLayout>
+    )
 }

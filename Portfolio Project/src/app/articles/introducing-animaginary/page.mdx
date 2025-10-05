@@ -15,92 +15,70 @@ export const metadata = {
 
 export default (props) => <ArticleLayout article={article} {...props} />
 
-When you’re building a website for a company as ambitious as Planetaria, you need to make an impression. I wanted people to visit our website and see animations that looked more realistic than reality itself.
+Trading Bots & Python: Building My First Algo Strategy
 
-To make this possible, we needed to squeeze every drop of performance out of the browser possible. And so Animaginary was born.
+When I decided to build my first trading bot, I thought I was just going to automate a few trades. In reality, I ended up learning more about markets, code, and human psychology than I ever expected. It started as a simple idea — “What if I could make my computer trade for me?” — and turned into a crash course in algorithmic thinking.
 
-```js
-import { animate } from '@planetaria/animaginary'
+I wasn’t trying to compete with Wall Street’s quant teams. My goal was smaller: build something that could take a simple strategy, test it, and execute it automatically — without emotion, without hesitation, and preferably without losing all my money.
 
-export function MyComponent({ open, children }) {
-  return (
-    <animate.div
-      in={open}
-      animateFrom="opacity-0 scale-95"
-      animateTo="opacity-100 scale-100"
-      duration={350}
-    >
-      {children}
-    </animate.div>
-  )
-}
-```
+⸻
 
-Animaginary is our new web animation library that redefines what you thought was possible on the web. Hand-written in optimized WASM, Animaginary can even animate the `height` property of an element at 60fps.
+Laying the Foundation
 
-## Sermone fata
+I built my first prototype in Python, because Python has everything you could ask for in data-driven experimentation — clean syntax, powerful libraries, and an ecosystem obsessed with trading automation.
+My initial stack was simple:
+•	Pandas for data wrangling
+•	NumPy for calculations
+•	Matplotlib for quick visualizations
+•	ccxt for connecting to crypto exchanges
+•	And a healthy dose of Jupyter Notebooks for testing logic before I broke anything important
 
-Lorem markdownum, bracchia in redibam! Terque unda puppi nec, linguae posterior
-in utraque respicere candidus Mimasque formae; quae conantem cervice. Parcite
-variatus, redolentia adeunt. Tyrioque dies, naufraga sua adit partibus celanda
-torquere temptata, erit maneat et ramos, [iam](#) ait dominari
-potitus! Tibi litora matremque fumantia condi radicibus opusque.
+The goal wasn’t just to make trades, but to understand why a bot should make them.
 
-Deus feram verumque, fecit, ira tamen, terras per alienae victum. Mutantur
-levitate quas ubi arcum ripas oculos abest. Adest [commissaque
-victae](#) in gemitus nectareis ire diva
-dotibus ora, et findi huic invenit; fatis? Fractaque dare superinposita
-nimiumque simulatoremque sanguine, at voce aestibus diu! Quid veterum hausit tu
-nil utinam paternos ima, commentaque.
+⸻
 
-```c
-exbibyte_wins = gigahertz(3);
-grayscaleUtilityClient = control_uat;
-pcmciaHibernate = oop_virus_console(text_mountain);
-if (stateWaisFirewire >= -2) {
-    jfs = 647065 / ldapVrml(tutorialRestore, 85);
-    metal_runtime_parse = roomComputingResolution - toolbarUpload +
-            ipx_nvram_open;
-} else {
-    maximizeSidebar *= suffix_url(flatbed + 2, requirements_encoding_node +
-            only_qbe_media, minicomputer);
-}
-```
+Designing the Strategy
 
-Aere repetiti cognataque natus. Habebat vela solutis saepe munus nondum adhuc
-oscula nomina pignora corpus deserat.
+I started with a moving average crossover — the “Hello World” of algorithmic trading. Two averages, one short-term and one long-term. When the short crosses above the long, it signals a buy. When it crosses below, it signals a sell.
 
-## Lethaei Pindumve me quae dinumerat Pavor
+It looked elegant on paper. In code, it looked even better. And in backtests? It looked profitable.
 
-Idem se saxa fata pollentibus geminos; quos pedibus. Est urnis Herses omnes nec
-divite: et ille illa furit sim verbis Cyllenius.
+That lasted about two days.
 
-1. Captus inpleverunt collo
-2. Nec nam placebant
-3. Siquos vulgus
-4. Dictis carissime fugae
-5. A tacitos nulla viginti
+When I moved to live data, latency, slippage, and exchange quirks quickly humbled me. I learned that the gap between a backtest and real market execution is enormous — it’s the difference between theory and reality.
 
-Ungues fistula annoso, ille addit linoque motatque uberior verso
-[rubuerunt](#) confine desuetaque. _Sanguine_ anteit
-emerguntque expugnacior est pennas iniqui ecce **haeret** genus: peiora imagine
-fossas Cephisos formosa! Refugitque amata [refelli](#)
-supplex. Summa brevis vetuere tenebas, hostes vetantis, suppressit, arreptum
-regna. Postquam conpescit iuvenis habet corpus, et erratica, perdere, tot mota
-ars talis.
+⸻
 
-```c
-digital.webcam_dual_frequency = webmasterMms;
-if (5 + language_standalone_google) {
-    cc_inbox_layout *= file_character;
-    task += p;
-    lockUnicode += enterprise_monochrome(tokenFunctionPersonal, keyVirtual,
-            adf);
-}
-windows_binary_esports(87734, array(restoreRomTopology, adRaw(407314),
-        dongleBashThumbnail), interpreter);
-```
+Lessons in Logic and Emotion
 
-Sit volat naturam; motu Cancri. Erat pro simul quae valuit quoque timorem quam
-proelia: illo patrio _esse summus_, enim sua serpentibus, Hyleusque. Est coniuge
-recuso; refert Coroniden ignotos manat, adfectu.
+What surprised me most wasn’t the coding — it was the psychology. Writing a bot meant confronting all the biases I didn’t know I had. Every parameter tweak was secretly me trying to “outsmart” the market. Every backtest curve that looked too good was a red flag for overfitting.
+
+The bot didn’t have emotions, but I did. And that’s where I realized the true power of algorithmic trading: not that the bot is smarter, but that it’s more consistent. It does exactly what you tell it to, even when fear or greed would make a human hesitate.
+
+⸻
+
+From Code to System
+
+As I iterated, I started adding structure:
+•	A modular architecture for strategies, data sources, and risk management
+•	Logging and monitoring so I could trace every trade
+•	A sandbox mode to simulate trades safely
+•	And most importantly, risk rules — position sizing, stop losses, and capital limits
+
+Python made it easy to build fast, but it also taught me to think slowly. Every feature came with a question: “Does this make the bot better, or just more complicated?”
+
+⸻
+
+What I Learned
+1.	Data is everything. Your strategy is only as good as your inputs. Bad data = bad decisions, automated faster.
+2.	Backtests lie. They’re a great starting point but rarely survive contact with reality.
+3.	Risk management beats prediction. The best bots don’t win every trade; they just lose less often and survive longer.
+4.	Automation amplifies discipline. A good bot enforces the rules you’d break under pressure.
+
+⸻
+
+Where I’m Headed Next
+
+That first bot was a humble experiment, but it gave me a deep respect for the complexity of markets — and the clarity of code. Now, I’m exploring machine learning signals, event-driven architecture, and portfolio optimization — always with the same mindset: test, measure, iterate, and never fall in love with a model.
+
+Because in trading, as in coding, evolution always beats perfection.
