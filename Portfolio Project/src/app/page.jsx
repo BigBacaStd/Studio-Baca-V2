@@ -234,12 +234,12 @@ export default async function Home() {
                             icon={InstagramIcon}
                         />
                         <SocialLink
-                            href="#"
+                            href="https://github.com/BigBacaStd"
                             aria-label="Follow on GitHub"
                             icon={GitHubIcon}
                         />
                         <SocialLink
-                            href="#"
+                            href="www.linkedin.com/in/jorge-vargas18"
                             aria-label="Follow on LinkedIn"
                             icon={LinkedInIcon}
                         />
